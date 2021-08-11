@@ -1,18 +1,18 @@
 import { getMiningFacilities, getChosenMinerals, setFacility } from "./Database.js";
-import {FacilityMinerals} from "./FacilityMinerals.js";
+import { FacilityMinerals } from "./FacilityMinerals.js";
 
 const facilities = getMiningFacilities()
 
 document.addEventListener(
-        "click",
-        (event) => {
-            if (event.target.id.startsWith("facility--")) {
-                const [, facilityId] = event.target.id.split("--")
-                setFacility(parseInt(facilityId))
-            }        
+    "click",
+    (event) => {
+        if (event.target.id.startsWith("facility--")) {
+            const [, facilityId] = event.target.id.split("--")
+            setFacility(parseInt(facilityId))
         }
-    )
-    
+    }
+)
+
 export const MiningFacilities = () => {
     const storage = getChosenMinerals()
 
@@ -24,15 +24,13 @@ export const MiningFacilities = () => {
             id = "facility--${facility.id}"> ${facility.name}
         </button>
 
-        ${
-            storage.selectFacility === facility.id ? FacilityMinerals() : ""
-     }
+        ${storage.selectFacility === facility.id ? FacilityMinerals() : ""
+        }
      </ul>
          `).join("")
 }
 
-  
+
 // line 22 <button ${storage.chooseGovernor > 0 ? "Facility" : "Select Governor"}
-     
-     
-    
+
+

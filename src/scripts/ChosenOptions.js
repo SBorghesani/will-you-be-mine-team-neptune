@@ -17,6 +17,6 @@ export const ChosenOptions = () => {
             html += `<li>You have chosen 1 ton of ${mineral.type} from ${facility.name} </li>`
         }
         html += `</ul>`
-    } 
+    }
     return html
 }

@@ -5,10 +5,10 @@ import { ColonyMinerals } from "./ColonyMineralInv.js"
 document.addEventListener(
     "change",
     (changeEvent) => {
-        if (changeEvent.target.id === "governors"){
-        setGovernor(parseInt(changeEvent.target.value))
-        console.log("state of data has changed")
-     }
+        if (changeEvent.target.id === "governors") {
+            setGovernor(parseInt(changeEvent.target.value))
+            console.log("state of data has changed")
+        }
     }
 )
 
@@ -25,7 +25,7 @@ export const Governors = () => {
         html = `<select class="governors" id="governors">
         <option value="">Choose</option>`
     }
-    
+
     const govHTML = governors.map(gov => {
         if (gov.isActiveGov) {
             return `
@@ -36,11 +36,11 @@ export const Governors = () => {
             <option value =${gov.id} disabled>${gov.name}</option>
             `
         }
-                       
-    } )
+
+    })
 
     html += govHTML.join("")
     html += "</select>"
 
-    return html   
+    return html
 }
